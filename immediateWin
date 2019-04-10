@@ -13,3 +13,4 @@ for(i =1:7)
     end
   end
 end
+move = -1;
