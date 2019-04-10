@@ -4,7 +4,6 @@ cols = Bsize(2);
 rows = Bsize(1);
 count = 0;
 gWin = false;
-disp('hi');
 % checks rows to see if player playNum has won
 for i = 1:rows
         for j = 1:cols-1
@@ -38,7 +37,6 @@ end
 
 %checks up/right diagonals to see if player playNum has won
 for i = 7:-1:4
-   disp(num2str(i));
    b = posDCheck(boardArr,1,i,playNum); 
    if( b == true)
      
@@ -52,7 +50,6 @@ end
    end
 %checks left/up diagonals
 for i = 1:4
-    disp(num2str(i));
     if(negDCheck(boardArr,1,i,playNum))
         gWin = true;
     end
