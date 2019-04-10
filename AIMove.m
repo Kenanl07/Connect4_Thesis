@@ -1,18 +1,20 @@
-function move=AIMove(difficulty, board)
+function move=AIMove(difficulty, board, player)
 
-[winCol, winRow]=immediateWin(board);
+winMove=immediateWin(board, player);
 
-[loseCol, loseRow]=blockImmediateWin(board);
+if(player==1)
+    opponent=1;
+else 
+    opponent=2;
+
+opponentWin=blockImmediateWin(board, opponent);
 
 if(difficulty==1)
-    if(winCol~=-1)
-        if(winRow==canPlayHere(winCol, board))
-            move=winCol;
-        end
-    elseif(loseCol~=-1)
-        if(loseRow==canPlayHere(loseCol, board))
-            move=loseCol;
-        end
+    if(winMove~=-1)
+        move=winMove;
+        return;
+    elseif(opponentWin~=-1)
+        move=opponentWin;
     else % maybe modify to look ahead 1 move and not move under win conditions
         move=randi(7);
     end
