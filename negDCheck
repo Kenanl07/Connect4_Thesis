@@ -7,7 +7,6 @@ function gWinDn = negDCheck(boardArr,startRow,startCol,playNum)
     countDn = 0;
     gWinDn =false;
     while(k < rowsDn && l > colsDn)
-        disp([num2str(k),' ', num2str(l)]);
         if( boardArr(k,l)==playNum && boardArr(k+1,l+1)==playNum)
                 countDn = countDn +1;
                 if (countDn >= 3)
