@@ -1,5 +1,8 @@
 clc
 clear
+
+p1WinCount = 0;
+p2WinCount = 0;
  
 disp(' ')
 disp('Great! Here we go!!')
@@ -14,8 +17,10 @@ for i = 1:42
     pick = 0;
     while true
         if(player==1)
+            pause(.25);
             pick = input('Player ONE: Pick a column number (1-7): ');
         else
+            pause(.25);
             pick = input('Player TWO: Pick a column number (1-7): ');
         end
         
@@ -49,6 +54,11 @@ for i = 1:42
     % check if game is over
     if(gameWon(field, player))
         disp(['Player ' num2str(player) ' wins!']);
+        if player == 1
+            p1WinCount = p1WinCount + 1;
+        elseif player == 2
+            p2WinCount = p2WinCount + 1;
+        end
         break;
     end
     
