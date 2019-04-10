@@ -6,11 +6,8 @@ function gWinDp = posDCheck(boardArr,startRow,startCol,playNum)
     countDp = 0;
     gWinDp = false;
     while(k < rowsDp && l >= 1)
-        disp([num2str(k),' ', num2str(l),num2str(boardArr(k,l))]);
         if( boardArr(k,l)==playNum && boardArr(k+1,l-1)==playNum)
                 countDp = countDp +1;
-                disp('hil');
-                disp([num2str(k),',',num2str(l)]);
                 if (countDp >= 3)
                     gWinDp = true;
                 end
