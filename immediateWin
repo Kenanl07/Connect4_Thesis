@@ -1,0 +1,15 @@
+function move=immediateWin(board, player)
+
+originalBoard=board;
+
+for(i =1:7)
+	if(canPlayHere(i)~=-1)
+		board(i,canPlayHere(i))=player;
+    if(gameWon(board,player))
+    		move = i;
+    		return;
+    else
+    	board = originalBoard
+    end
+  end
+end
