@@ -1,0 +1,104 @@
+function gWin = gameWon(boardArr,playNum)
+Bsize = size(boardArr);
+cols = Bsize(2);
+rows = Bsize(1);
+count = 0;
+gWin = false;
+% checks rows to see if player playNum has won
+for i = 1:rows
+        for j = 1:cols-1
+            if( boardArr(i,j)==playNum && boardArr(i,j+1)==playNum)
+                count = count +1;
+                if (count >= 3)
+                    gWin = true;
+                end
+            else
+                count = 0;
+            end
+        end
+        count = 0;
+end
+
+
+% checks columns to see if player playNum has won
+for b = 1:cols
+        for c = 1:rows-1
+            if( boardArr(c,b)==playNum && boardArr(c+1,b)==playNum)
+                count = count +1;
+                if (count >= 3)
+                    gWin = true;
+                end
+            else
+                count = 0;
+            end
+        end
+        count = 0;
+end
+
+%checks up/right diagonals to see if player playNum has won
+for i = 1:4
+   if(posDCheck(boardArr,1,i,playNum))
+       gWin = true;
+   end
+       
+end
+   if(posDCheck(boardArr,2,1,playNum) || posDCheck(boardArr,3,1,playNum))
+       gWin = true;
+   end
+%checks left/up diagonals
+for i = 7:-1:4   
+    if(negDCheck(boardArr,1,i,playNum))
+        gWin = true;
+    end
+end
+    if(negDCheck(boardArr,2,7,playNum) || negDCheck(boardArr,3,7,playNum))
+        gWin = true;
+    end
+    
+
+
+end
+
+function gWinDp = posDCheck(boardArr,startRow,startCol,playNum)
+    k = startRow;
+    l = startCol;
+    BsizeDp = size(boardArr);
+    colsDp = BsizeDp(2);
+    rowsDp = BsizeDp(1);
+    countDp = 0;
+    gWinDp = false;
+    while(k < rowsDp && l < colsDp)
+        if( boardArr(k,l)==playNum && boardArr(k+1,l+1)==playNum)
+                countDp = countDp +1;
+                if (countDp >= 3)
+                    gWinDp = true;
+                end
+            else
+                countDp = 0;
+        end
+        k = k+1;
+        l = l+1;
+    end
+end
+
+function gWinDn = negDCheck(boardArr,startRow,startCol,playNum)
+    k = startRow;
+    l = startCol;
+    BsizeDn = size(boardArr);
+    colsDn = BsizeDn(2);
+    rowsDn = BsizeDn(1);
+    countDn = 0;
+    gWinDn =false;
+    while(k < rowsDn && l > colsDn)
+        if( boardArr(k,l)==playNum && boardArr(k+1,l-1)==playNum)
+                countDn = countDn +1;
+                if (countDn >= 3)
+                    gWinDn = true;
+                end
+            else
+                countDn = 0;
+        end
+        k = k+1;
+        l = l-1;
+    end
+end
