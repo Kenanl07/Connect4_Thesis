@@ -1,37 +1,44 @@
 clc
 clear
-
+% Sets both players to wins of 0
 p1WinCount = 0;
 p2WinCount = 0;
- 
+ % Sets up introduction to game in command window
 disp(' ')
 disp('Great! Here we go!!')
 disp('At any time press CTRL and C to end game.')
 disp(' ')
 disp('LET THE GAME BEGIN!')
 disp(' ')
+
+% Displays array as the game board
 field = zeros(6,7);
 disp(field)
 player = 1;
 for i = 1:42
+% 'i' goes to 42 because that is the max number of plays to fill the board
     pick = 0;
     while true
         if(player==1)
             pause(.25);
             pick = input('Player ONE: Pick a column number (1-7): ');
+            % Asks first player to give a column they want to play into
         else
             pause(.25);
             pick = input('Player TWO: Pick a column number (1-7): ');
+            % Asks second player to give a column they want to play into
         end
         
         % check if valid input
         while pick > 7 || pick < 1
+       % Displays statement if input column is not on gameboard
                 disp(' ')
                 disp('Input must be 1, 2, 3, 4, 5, 6 or 7.')
                 if(player==1)
                     pick = input('Player ONE: Pick a column number (1-7): ');
                 else
                     pick = input('Player TWO: Pick a column number (1-7): ');
+                    % Asks for input again if column not within gameboard
                 end
         end
         
@@ -54,6 +61,7 @@ for i = 1:42
     % check if game is over
     if(gameWon(field, player))
         disp(['Player ' num2str(player) ' wins!']);
+        % Adds 1 to a players win count if they win
         if player == 1
             p1WinCount = p1WinCount + 1;
         elseif player == 2
