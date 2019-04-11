@@ -1,3 +1,6 @@
+% This function supports win-checker function by checking win scenarios
+% specifically for diagonal wins going down and to the right.
+
 function gWinDp = posDCheck(boardArr,startRow,startCol,playNum)
     k = startRow;
     l = startCol;
