@@ -1,3 +1,9 @@
+% Connect 4 Project Notre Dame Spring 2019 
+% Brian Donahoe, Jack Masciopinto, Thomas Fisher, Kenan Lumantas, Jason Brown
+% EG 10112 Final Project
+% Prof. McWilliams
+% Updated: 4/10/2019
+
 % This function supports win-checker function by checking win scenarios
 % specifically for diagonal wins going down and to the right.
 
