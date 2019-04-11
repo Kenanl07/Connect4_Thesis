@@ -1,5 +1,5 @@
 % Connect 4 Project Notre Dame Spring 2019 
-% Brian Donahoe, Jack Masciopinto, Thomas Fisher, Kenan Lumantas, Jason Brown
+% Brian Donahoe, North Masciopinto, Fred Fisher, Kelso Lumantas, Jason Bourne
 % EG 10112 Final Project
 % Prof. McWilliams
 % Updated: 4/10/2019
@@ -9,7 +9,22 @@ clear
 % Sets both players to wins of 0
 p1WinCount = 0;
 p2WinCount = 0;
- % Sets up introduction to game in command window
+
+for(iRow=1:21)
+	aggregateMoves(iRow)=1:1:7;
+end
+
+ifWon=0;
+numSims=1000;
+for(iSim=1:numSims)
+	while ~ifWon
+		[gameMoves, ifWon]=connect4F(aggregateMoves, iSims);
+  end
+  aggregateMoves=[aggregateMoves gameMoves];
+end
+
+
+% Sets up introduction to game in command window
 disp(' ')
 disp('Great! Here we go!!')
 disp('At any time press CTRL and C to end game.')
