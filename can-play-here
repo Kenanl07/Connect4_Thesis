@@ -2,7 +2,6 @@ function row=canPlayHere(pick, field)
 % Given the board and the desired token place location, return the row in
 % which the token will be placed in that location, or -1 if the user cannot
 % play here.
-%
  
 row=canPlayHereRecursive(6, pick, field);
  
