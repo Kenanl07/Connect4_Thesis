@@ -10,13 +10,13 @@ clear
 p1WinCount = 0;
 p2WinCount = 0;
 
-for(iRow=1:21)
-	aggregateMoves(iRow)=1:1:7;
+for(i=1:7)
+    aggregateMoves(1:21,i)=i;
 end
 
 ifWon=0;
 numSims=1000;
-for(iSim=1:numSims)
+for(iSims=1:numSims)
 	while ~ifWon
 		[gameMoves, ifWon]=connect4F(aggregateMoves, iSims);
   end
