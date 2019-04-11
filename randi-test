@@ -1,5 +1,10 @@
 % Proof of Concept
-% 2 random AI's play eachother
+% This code is Base_v5 but edited to have 2 easy AI's play eachother
+% These AI's are easy because ther use randi(7) to determine where to play,
+% no strategy is utilized.
+% This code also has a counter to see how often which AI wins, either
+% the first AI to play, or the second AI to play.
+% Preliminary tests suggest that the first player has a slight advantage.
 
 clc
 clear
