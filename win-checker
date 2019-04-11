@@ -1,9 +1,15 @@
+% Function used to determine if the game has ended by determining
+% if either play has achieved 4 in a row vertically, horizontally,
+% or diagonally in any direction.
+
 function gWin = gameWon(boardArr,playNum)
 Bsize = size(boardArr);
 cols = Bsize(2);
 rows = Bsize(1);
+% Our project uses the standard 7 column, 6 row game board
 count = 0;
 gWin = false;
+
 % checks rows to see if player playNum has won
 for i = 1:rows
         for j = 1:cols-1
@@ -35,7 +41,7 @@ for b = 1:cols
         count = 0;
 end
 
-%checks up/right diagonals to see if player playNum has won
+% checks right/up diagonals to see if player playNum has won
 for i = 7:-1:4
    b = posDCheck(boardArr,1,i,playNum); 
    if( b == true)
@@ -58,12 +64,4 @@ end
         gWin = true;
     end
     
-
-
 end
-
-
-
-
-
-
