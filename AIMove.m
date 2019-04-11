@@ -6,6 +6,7 @@ if(player==1)
     opponent=1;
 else 
     opponent=2;
+end
 
 opponentWin=blockImmediateWin(board, opponent);
 
