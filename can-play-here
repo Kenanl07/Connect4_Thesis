@@ -1,3 +1,9 @@
+% Connect 4 Project Notre Dame Spring 2019 
+% Brian Donahoe, Jack Masciopinto, Thomas Fisher, Kenan Lumantas, Jason Brown
+% EG 10112 Final Project
+% Prof. McWilliams
+% Updated: 4/10/2019
+
 function row=canPlayHere(pick, field)
 % Given the board and the desired token place location, return the row in
 % which the token will be placed in that location, or -1 if the user cannot
