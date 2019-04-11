@@ -14,7 +14,7 @@ else
     opponent=2;
 end
 
-opponentWin=blockImmediateWin(board, opponent);
+opponentWin=ImmediateWin(board, opponent);
 
 if(difficulty==1)
     if(winMove~=-1)
