@@ -1,4 +1,4 @@
-function [gameMoves, ifWon]=connect4F(aggregateMoves, numTimesWon);
+function [gameMoves, ifWon]=connect4F(aggregateMoves, numTimesWon)
 %clc
 %clear
 gameMoves = zeros(1, 21);
@@ -16,15 +16,15 @@ field = zeros(6,7);
 player = 1;
 
 for i = 1:42
-    pick = 0;
+    pick = 1;
         if(player==1)
           	%pause(.25)
             %pick = input('Player ONE: Pick a column number (1-7): ');
-            pick=AIMove(1, field, 1)
+            pick=AIMove(1, field, 1);
         else
             %pause(.25);
             while (canPlayHere(pick, field)==-1)
-            	pick = aggregateMoves(i/2, randi(numTimesWon+7)) %input('Player TWO: Pick a column number (1-7): ');
+            	pick = aggregateMoves(i/2, randi(numTimesWon+7)); %input('Player TWO: Pick a column number (1-7): ');
             end
             gameMoves(i/2)=pick;
         end
